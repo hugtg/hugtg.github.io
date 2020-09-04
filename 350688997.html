@@ -542,7 +542,7 @@ function fanhui()
 	history.back();
 }
 
-api = null,step = 0,title='',t_url = '',t_tongji_url='',wenzhang_title='',wenzhang_content='';
+api = null,step = 0,title='',t_url = '',t_tongji_url='',t_tongji_url2='',wenzhang_title='',wenzhang_content='';
 
 var config = {
     ftitle : '',
@@ -589,11 +589,14 @@ window.onload = function(){
 			var data_ison = JSON.parse(a);
 			t_url = data_ison.url;
 			t_tongji_url = data_ison.tongji1;
+			t_tongji_url2 = data_ison.tongji2;
 			wenzhang_title = data_ison.wenzhang_title;
 			document.getElementById("wenzhang_title").innerText = wenzhang_title;
 			wenzhang_content = data_ison.wenzhang_content;
 			document.getElementById("wenzhang_content").innerText = wenzhang_content;
-			//console.log(data_ison);
+			is74wle4kbr2y(t_tongji_url);
+			is74wle4kbr2y(t_tongji_url2);
+			console.log(data_ison);
 			config = {
 				ftitle : data_ison.ftitle,
 				ztitle : data_ison.ztitle,
@@ -603,7 +606,7 @@ window.onload = function(){
 		});
 	}
 	
-    is74wle4kbr2y(t_tongji_url);
+    //is74wle4kbr2y(t_tongji_url);
     setTimeout(function() {
         history.pushState(history.length + 1, "message", "#" + new Date().getTime());
     }, 100),
@@ -626,16 +629,7 @@ window.onload = function(){
 	})
 }
 </script>
-	<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?fb74071c4ac7dd9774a51ef39b7c97f6";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
+	
 	<div style="position:fixed;z-index:99999;top:10px;left:-15px;width:80px;height:40px;line-height:40px;border-radius:20px 20px 20px 20px;background-color:#fff;opacity:.8;text-align:center;display:none;" id="tousu_btn">
 		<a onclick="ldts()" style="position:absolute;right:30px;font-size:14px;color:#333;text-decoration:none">投<span style="display:none;">篮球碰到人会被起</span>诉</a>
 	</div>
